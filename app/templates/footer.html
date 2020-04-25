@@ -1,0 +1,37 @@
+{% load static %}
+{% block footer %}
+<style>
+    .network{
+        text-decoration : none;
+        color: #d7d7d7;
+        font-size: 48px;
+        padding: 35px;
+        text-align: right;
+        width: 100%;
+    }
+    .network:hover, .network>span:hover{
+        text-decoration: none;
+        color: grey;
+    }
+</style>
+
+<div class="custom footer">
+    <div class="row" style="padding:30px;">
+        <div class="col-sm-3">
+            <img src="{% static 'img/ae.png' %}" style="height:50px">
+            <h2 class="white text-left">
+                Contact: across.esport@gmail.com
+            </h2>
+        </div>
+        <div class="col-sm-3">
+            <a class="network" href="https://discord.gg/neu6JYY"><i class="fab fa-discord"></i></a>
+        </div>
+        <div class="col-sm-3">
+            <a class="network" href="https://twitter.com/Across_eSport"><i class="fab fa-twitter-square"></i></a>
+        </div>
+        <div class="col-sm-3">
+            <a class="network" href="https://www.youtube.com/channel/UCdyEBqzPBmiLa4KjCUeC6gg/?guided_help_flow=5"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

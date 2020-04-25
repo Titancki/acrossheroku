@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div>
+    <div class="row">
+        <div class="col-sm-7" style="padding: 0px;">
+            <iframe
+                src="https://player.twitch.tv/?channel=across_esporttv&parent=streamernews.example.com&muted=true"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+            </iframe>
+        </div>
+    <div class="col-sm-5" style="padding: 0px;">
+        {% for match in lastMatchs %}
+        <div class="result {{match.game.get_abname}}">
+            <div class="container row">
+                <div class="col-sm-4">
+                    <h3>{{match.game.name}}</h3>
+
+                    <p>{{match.date|date:'d-m-Y H:i'}}</p>
+                </div>
+                <div class="col-sm-8">
+                    <h2 class="text-center white" style="margin-top:19px">{{match.team1.name}} {{match.score1}} - {{match.score2}} {{match.team2.name}}</h2>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% for dot in emptyMatchs %}
+        <div class="result">
+            <div class="container" style="padding: 20px">
+                <h2 class="text-center white"> Aucun match</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

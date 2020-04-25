@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container body">
+        {{user.id}}<br/>
+        {{user.is_superuser}}<br/>
+        {{user.email}}<br/>
+        {{user.is_staff}}<br/>
+        <form>
+            <a href="#" class="overlay">dsfsdf</a>
+            <div class="media">
+              <a href="#" class="overlay">
+                  <img  class="profil" src="{% static 'img/profil.jpg' %}">
+              </a>
+              <div class="media-body">
+                <h1 style="padding: 28px;">{{user.username}} <i style="" class="fas fa-cog"></i></h1> <!-- A modifier -->
+              </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

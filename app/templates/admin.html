@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="body row">
+    <div class="vertical-navbar col-sm-2" style="padding: 0px; padding-top: 20px;">
+        <a class="accordion btn btn-nav collapsed" type="button" data-toggle="collapse" href="#gameCollapse">
+            Jeux
+        </a><br/>
+        <a class="accordion btn btn-nav collapsed" type="button" data-toggle="collapse" href="#teamCollapse">
+            Equipes & LineUp
+        </a><br/>
+
+        <a class="accordion btn btn-nav collapsed" type="button" data-toggle="collapse" href="#matchCollapse">
+            Match
+        </a><br/>
+    </div>
+    <div class="col-sm-10">
+            <div class="panel collapse" id="teamCollapse">
+                <div>
+                    <h1>Equipes et LineUp</h1>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#addTeam">Ajouter une  équipe</button>
+
+                    <div class="modal fade" id="addTeam" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Ajouter une équipe</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form action="/add_team" method="post">
+                            {% csrf_token %}
+                            <div class="modal-body">
+                              <div class="form-group">
+                                <label for="teamName">Nom</label>
+                                <input type="text" class="form-control" name="teamName" id="teamName">
+                              </div>
+                              <div class="form-group">
+                                <label for="teamStructure">Structure</label>
+                                <input type="text" class="form-control" name="teamStructure" id="teamStructure">
+                              </div>
+                                <label for="teamGame">Jeu</label>
+                                <select class="form-control" name="teamGame" id="teamGame">
+                                {% for game in allGame %}
+                                  <option value="{{game.pk}}">{{game.name}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button type="submit" class="btn btn-primary">Ajouter</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <table class="table">
+                        <tbody>
+                        {% if allTeam.count > 0 %}
+                            {% for team in allTeam %}
+                                <tr>
+                                    <td>{{team.name}}</td>
+                                    <td>{{team.structure}}</td>
+                                    <td>{{team.game.name}}</td>
+                                    <td><a href="/delete_team?teamPk={{team.pk}}"><i class="fas fa-trash"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td>Aucune équipe</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="panel collapse" id="gameCollapse">
+                <h1>Jeux</h1>
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#addGame">Ajouter un jeu</button>
+
+                <div class="modal fade" id="addGame" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Ajouter un jeu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <form action="/add_game" method="post">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                          <div class="form-group">
+                            <label for="gameName">Nom</label>
+                            <input type="text" class="form-control" name="gameName" id="gameName" aria-describedby="emailHelp">
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+
+                <table class="table">
+                    <tbody>
+                    {% if allGame.count > 0 %}
+                        {% for game in allGame %}
+                            <tr>
+                                <td>{{game.name}}</td>
+                                <td><a href="/delete_game?gamePk={{game.pk}}"><i class="fas fa-trash"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td>Aucun jeu</td>
+                            <td></td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel collapse" id="matchCollapse">
+                <h1>Matchs et Historiques</h1>
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#addMatch">Ajouter un match</button>
+
+                    <div class="modal fade" id="addMatch" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Ajouter un match</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form action="/add_match" method="post">
+                            {% csrf_token %}
+                            <div class="modal-body">
+                                <label for="team1">Equipe 1</label>
+                                <div id="team1" class="row">
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="team1Match">
+                                        {% for team in allTeam %}
+                                          <option value="{{team.pk}}">{{team.name}}</option>
+                                        {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <input type="text" class="form-control" name="score1Match" placeholder="Score">
+                                    </div>
+                                </div>
+                                <label for="team2">Equipe 2</label>
+                                <div class="row" id="team2">
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="team2Match">
+                                        {% for team in allTeam %}
+                                          <option value="{{team.pk}}">{{team.name}}</option>
+                                        {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <input type="text" class="form-control" name="score2Match" placeholder="Score">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="gameMatch">Jeu</label>
+                                  <select class="form-control" id="gameMatch" name="gameMatch">
+                                    {% for game in allGame %}
+                                      <option value="{{game.pk}}">{{game.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input"name="dateMatch"  data-target="#datetimepicker1"/>
+                                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button type="submit" class="btn btn-primary">Ajouter</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <table class="table">
+                        <tbody>
+                        {% if allMatch.count > 0 %}
+                            {% for match in allMatch %}
+                                <tr>
+                                    <td>{{match.team1.name}} - {{match.team2.name}}</td>
+                                    <td>{{match.score1}} - {{match.score2}}</td>
+                                    <td>{{match.game.name}}</td>
+                                    <td>{{match.date|date:'d-m-Y H:i'}}</td>
+                                    <td><a href="/delete_match?matchPk={{match.pk}}"><i class="fas fa-trash"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td>Aucun match disponible</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endif %}
+                        </tbody>
+                    </table>
+            </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            format: 'DD-MM-YYYY HH:mm'
+        });
+    });
+</script>
+<script>
+    var acc = document.getElementsByClassName('accordion');
+    for (var i = 0, len = acc.length; i < len; i++) {
+        acc[i].addEventListener('click', function() {
+        var panels = document.getElementsByClassName('panel');
+        for (var i = 0, len = panels.length; i < len; i++) {
+            id = '#' + panels[i].id;
+            $(id).collapse('hide');
+        }
+
+        }, false);
+    };
+
+</script>
+
+{% endblock %}

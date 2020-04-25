@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    .col{
+        padding: 0px;
+    }
+
+</style>
+
+<div class="body">
+    <div class="row">
+        <div class="col col-sm-2">
+            <div class="games">
+                <a class="accordion btn btn-custom collapsed" type="button" data-toggle="collapse" href="#rlCollapse">
+                    Rocket League
+                </a><br/>
+                <a class="accordion btn btn-custom collapsed" type="button" data-toggle="collapse" href="#owCollapse">
+                    Overwatch
+                </a><br/>
+                <a class="accordion btn btn-custom collapsed" type="button" data-toggle="collapse" href="#r6Collapse">
+                    Tom Clancy's Rainbow Six Siege
+                </a><br/>
+                <a class="accordion btn btn-custom collapsed" type="button" data-toggle="collapse" href="#lolCollapse">
+                    League of Legend
+                </a>
+            </div>
+        </div>
+        <div class="col col-sm-10" style="padding: 0px">
+            <div class="panel collapse" id="rlCollapse">
+                <div id="rlCarousel" class="carousel slide z-depth-1-half" data-ride="carousel" data-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <h1 class="text-center">AE Storm</h1>
+                    <div class="team">
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Titancki</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Socra</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">SkyTiiKz</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Kir_AshTML</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">LaYeuf</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center">AE Ghost</h1>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center">AE Crius</h1>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center">AE Red</h1>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center">AE Green</h1>
+                </div>
+                <div class="carousel-item">
+                    <h1 class="text-center">AE Blue</h1>
+                    <div class="team">
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Pouchy</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">LaYeuf</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Cazu</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Terre</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="profil">
+                            <img src="{% static 'img/profil.jpg' %}">
+
+                            <h2 class="pseudo">Skrrrrrt</h2>
+                            <hr/>
+                            <p>Une description qui déboite!!!!!</p>
+                            <hr/>
+                            <div class="networks text-center">
+                                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a href="http://discord.com"><i class="fab fa-discord"></i></a>
+                                <a href="http://twitch.tv"><i class="fab fa-twitch"></i></a>
+                                <a href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+                                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                                <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center">AE Plastic</h1>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#rlCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#rlCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            </div>
+            <div class="panel collapse" id="owCollapse">
+                OW
+            </div>
+            <div class="panel collapse" id="r6Collapse">
+                R6
+            </div>
+            <div class="panel collapse" id="lolCollapse">
+                LOL
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var acc = document.getElementsByClassName('accordion');
+    for (var i = 0, len = acc.length; i < len; i++) {
+        acc[i].addEventListener('click', function() {
+        var panels = document.getElementsByClassName('panel');
+        for (var i = 0, len = panels.length; i < len; i++) {
+            id = '#' + panels[i].id;
+            $(id).collapse('hide');
+        }
+
+        }, false);
+    };
+
+</script>
+{% endblock %}

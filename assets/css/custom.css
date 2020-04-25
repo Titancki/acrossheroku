@@ -1,0 +1,217 @@
+body{
+    background-color: #5a0000;
+    height: 100vh;
+}
+.body{
+    min-height: calc(100vh - 205.5px - 143px);
+    padding-top: 20px;
+    margin: 0px;
+    color: black;
+}
+.footer{
+    /*background-image: url("/static/img/bg-footer.png");*/
+    background-size: cover;
+    width: 100%;
+    height: 143px;
+    border-top: 2px solid black;
+}
+h1{
+    color: #d7d7d7;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 8px;
+}
+
+h2{
+    color: #d7d7d7;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+    padding: 3px;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+}
+h3{
+    color: #d7d7d7;
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 8px;
+}
+.white{
+    color:white;
+}
+
+iframe{
+    width:100%;
+    height: calc(100vh - 205px - 143.5px);
+    margin:0px;
+}
+.row{
+    margin: 0px;
+}
+.result{
+    padding: 15px;
+    background-size: cover;
+    height: calc((100vh - 348.5px)/5);
+    border: 1px solid black;
+    color:white;
+    background-color: #483535;
+}
+.ow{
+    background-image: url("/static/img/result_ow.png");
+}
+.rl{
+    background-image: url("/static/img/result_rl.png");
+}
+.r6{
+    background-image: url("/static/img/result_r6.png");
+}
+.lol{
+    background-image: url("/static/img/result_lol.png");
+}
+
+.table{
+    color: grey;
+}
+/*
+*  NavBar
+*/
+.custom{
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #480000;
+}
+nav.custom{
+    border-bottom: 2px solid black;
+}
+.logo{
+    border-bottom: 2px solid black;
+    object-fit: cover;
+    width: 100%;
+    height: 135.51px;
+}
+nav > span{
+    text-decoration: none;
+    color: #d7d7d7;
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 75px;
+    font-size: 24px;
+    padding: 15px;
+    line-height: 36px;
+}
+nav > div > ul {
+    height: 68px;
+}
+nav > div > ul > li{
+    margin-left: 20px;
+}
+nav > div > ul > li:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+nav > div > ul > li > a{
+    text-decoration: none;
+    color: #d7d7d7;
+    font-size: 18px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 15px;
+}
+nav > div > ul > li > a:hover{
+    text-decoration: none;
+    color: #d7d7d7;
+}
+/*
+*  Vertical Navbar
+*/
+.vertical-navbar{
+    min-height: calc(100vh - 205px - 143.5px);
+    background-color: #212a35;
+    border-right: 2px solid black;
+    margin-top: -20px;
+}
+.btn-nav{
+    color: #000;
+    background-color: rgba(255,255,255,0.6);
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    border-radius: 0px;
+}
+.btn-nav.collapsed{
+    background-color: transparent;
+    box-shadow: none;
+}
+.btn.focus, .btn:focus{
+    box-shadow: none;
+}
+.btn-nav:hover{
+    backgroud-color: rgba(255,255,255,0.6);
+    color: #000;
+}
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+/*
+*  Profil Card
+*/
+.profil{
+    width: 140px;
+    border: 2px solid black;
+    background-color: #d7d7d7;
+    background: linear-gradient(110deg, #d7d7d7 60%, #A5AF9E 60%);
+    margin: 2.5px;
+    float: left;
+}
+hr{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+.profil > img{
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+.profil > p{
+    padding: 3px;
+    margin: 0px;
+}
+.profil > .networks{
+    margin: 3px;
+}
+.section{
+    overflow: hidden;
+}
+.vHead{
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    background-color: #480000;
+    height: 40px;
+    padding: 5px;
+    color: #d7d7d7;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+.staffs{
+    margin-left: 50px;
+    overflow: auto;
+    float: left;
+}
+.team{
+    margin-right: 11.8%;
+    margin-left: 11.8%;
+
+}
+.games{
+    margin-top: 45px;
+}
